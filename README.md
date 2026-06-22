@@ -22,27 +22,17 @@ ltrsp-benchmark/
 
 ├── README.md                  ← this file
 
-├── LICENSE                    ← CC-BY 4.0 (data) + MIT (code)
+├── load_instance.py           ← reference Python loader
 
-├── schema.md                  ← field-by-field description of the JSON files
+└── instances/
 
-├── summary.csv                ← one row per instance
+    ├── W01.json
 
-├── fleet_summary.csv          ← fleet composition per instance
+    ├── W02.json
 
-├── instances/
+    ├── …
 
-│   ├── W01.json
-
-│   ├── W02.json
-
-│   ├── …
-
-│   └── W20.json
-
-└── examples/
-
-└── load_instance.py       ← reference Python loader
+    └── W20.json
 
 Each `instances/W##.json` file is **self-contained**: it carries all the data
 needed to rebuild the routing network and solve the LTRSP on that week.
@@ -72,7 +62,7 @@ without exposing the underlying geography.
 ## Quick start (Python)
 
 ```python
-from examples.load_instance import load_instance
+from load_instance import load_instance
 
 inst = load_instance("instances/W05.json")
 
@@ -91,14 +81,13 @@ print(f"Time from {F[i]} to {M[j]}:",
       inst["time_matrices"]["forest_to_mill_min"][i][j], "min")
 ```
 
-See `examples/load_instance.py` for a fully documented reference loader.
+See `load_instance.py` for a fully documented reference loader.
 
 ---
 
 ## What's in a JSON file
 
-The JSON schema is described in detail in [`schema.md`](schema.md). In short,
-each instance file carries:
+Each instance file carries the following fields:
 
 - **metadata** — instance ID, planning week, units.
 - **sets** — anonymized lists `F, M, P, V, HB`.
@@ -121,8 +110,8 @@ All matrices follow the order of the `sets` lists. For example,
 
 The paper's matheuristic (Relax-and-Fix + Fix-and-Optimize) consumes exactly
 the fields released here. A reference implementation will be made available
-upon publication. In the meantime, the schema is sufficient for an
-independent re-implementation.
+upon publication. In the meantime, the field descriptions above are sufficient
+for an independent re-implementation.
 
 ---
 
@@ -141,14 +130,6 @@ If you use these instances, please cite the paper:
   note    = {Under revision}
 }
 ```
-
----
-
-## License
-
-- **Data** (`instances/*.json`, `summary.csv`, `fleet_summary.csv`):
-  [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
-- **Code** (`examples/`): [MIT License](LICENSE).
 
 ---
 
