@@ -105,7 +105,7 @@ each instance file carries:
 - **cardinalities** — convenience counts.
 - **vehicles_info** — per truck: capacity (GMT), self-loading flag.
 - **home_bases_info** — which trucks belong to each home base.
-- **mills_info** — opening/closing times of each time interval at each mill.
+- **mills_info** — daily opening and closing time of each mill (HH:MM, 24-hour).
 - **demand_d_mp** — weekly demand `(mill, product) → GMT`.
 - **supply_s_fp** — weekly supply `(forest, product) → GMT`.
 - **distance_matrices** — 4 matrices (km) for all relevant origin–destination pairs.
