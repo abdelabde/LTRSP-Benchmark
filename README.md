@@ -104,17 +104,6 @@ Each instance file carries the following fields:
 All matrices follow the order of the `sets` lists. For example,
 `forest_to_mill_km[i][j]` is the distance from `F[i]` to `M[j]`.
 
----
-
-## Reproducing the paper's results
-
-The paper's matheuristic (Relax-and-Fix + Fix-and-Optimize) consumes exactly
-the fields released here. A reference implementation will be made available
-upon publication. In the meantime, the field descriptions above are sufficient
-for an independent re-implementation.
-
----
-
 ## Citation
 
 If you use these instances, please cite the paper:
