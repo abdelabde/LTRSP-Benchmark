@@ -1,6 +1,6 @@
 # LTRSP Benchmark Instances
 
-Anonymized weekly instances for the **Log-Truck Routing and Scheduling Problem
+Anonymized and scaled weekly instances (demand, supply, and vehicles capacity are scaled) for the **Log-Truck Routing and Scheduling Problem
 (LTRSP)**.
 
 This repository supports the paper:
